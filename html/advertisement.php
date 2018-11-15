@@ -82,7 +82,7 @@ if (!isset($_SESSION['lp_email'])) {
                                 <div class="form-group">
                                     <code>Company Image</code>
                                     <input type="file" name="file" class="form-control" required=""><br>
-                                    <button class="btn btn-warning" name="add_advertisement" style="float: right;">Submit</button>
+                                    <button class="btn btn-warning" name="add_advertisement" style="float: right;">Set up payment</button>
                                 </div>
                             </form>
                         </div>

@@ -36,6 +36,7 @@
         </div>
 
       </form>
+      <img src="../plugins/images/motto.png" height="70" width="280" style="display: block;margin-right: auto;margin-left: auto;margin-top: 40px">
 
     </div>
 

@@ -83,6 +83,8 @@ if (isset($_POST['add_advertisement'])) {
 
     $sql = mysqli_query($db, "INSERT INTO `tbladvertisement` (`id`, `company`, `price`, `image`, `link`) VALUES (NULL, '$company', '$price', '$data', '$link');");
     $result_ads = "<h3 style='padding: 10px; background-color: #99ff99;margin-bottom:10px' class='btn btn-dark btn-block'>Advertiser Added</h3";
+    $_SESSION['lp_company'] = $company;
+    header('Location: setup_payment.php');
 }
 // Login
 if (isset($_POST['login'])) {
