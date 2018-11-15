@@ -7,47 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/logo.png">
     <title>Ligtas Pinas</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Menu CSS -->
-    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <!-- toast CSS -->
-    <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
-    <!-- morris CSS -->
-    <link href="../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
-    <!-- chartist CSS -->
-    <link href="../plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="../plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- color CSS -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-<div class="container" style="margin-top: 100px;">
-    <div class="card card-login mx-auto mt-5">
-    	<div align="center">
-    		<img src="#" height="100" width="160">
-    	</div>
-      <div class="card-body">
-        <form method="post">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email Address</label>
-            <input class="form-control" name="email" type="text" aria-describedby="emailHelp" placeholder="Enter Email Address">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" name="password" type="password" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-warning btn-block" name="login_user">Login</button>
-        </form>
-      </div>
+
+  <body class="align" style="background-image: url('../plugins/images/bg.jpg')">
+
+    <div class="grid">
+      <img src="../plugins/images/bg.png" height="250" width="250" style="display: block;margin-right: auto;margin-left: auto;">
+      <form method="POST" class="form login" style="margin-top: 5%;">
+
+        <div class="form__field">
+          <label for="login_username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
+          <input id="login_username" type="text" name="email" class="form__input" placeholder="Username" required>
+        </div>
+
+        <div class="form__field">
+          <label for="login_password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
+          <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+        </div>
+
+        <div class="form__field">
+          <input type="submit" value="Sign In">
+        </div>
+
+      </form>
+
+
     </div>
-  </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icons"><symbol id="arrow-right" viewBox="0 0 1792 1792"><path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z"/></symbol><symbol id="lock" viewBox="0 0 1792 1792"><path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z"/></symbol><symbol id="user" viewBox="0 0 1792 1792"><path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z"/></symbol></svg>
+
+  </body>
+
   <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>

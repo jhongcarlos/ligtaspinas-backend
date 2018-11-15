@@ -102,7 +102,7 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2018 &copy; Ligtas Pinas </footer>
+            <?php include('footer.php') ?>
         </div>
         <!-- ============================================================== -->
         <!-- End Page Content -->

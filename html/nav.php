@@ -1,22 +1,23 @@
 <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
-                <img src="#" height="50" width="170" class="light-logo" style="padding: 3px">
+                <img src="../plugins/images/logo2.png" height="75" width="300" class="light-logo" style="padding: 3px">
                 <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a href="#systemlog"><b class="hidden-xs">System Log</b></a>
+                        <img src="../plugins/images/u_icon.png" height="80" width="80">
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->
             <!-- /.navbar-static-side -->
+
         </nav>
         <!-- End Top Navigation -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <div class="navbar-default sidebar" role="navigation">
+        <div class="navbar-default sidebar" role="navigation" style="margin-top: 20px">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
                     <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
@@ -47,7 +48,13 @@
                         <a href="announcement.php" class="waves-effect"><i class="fa fa-bullhorn fa-fw" aria-hidden="true"></i>Announcement</a>
                     </li>
                     <li>
+                        <a href="advertisement.php" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i>Manage Advertisement</a>
+                    </li>
+                    <li>
                         <a href="account_settings.php" class="waves-effect"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i>Account Settings</a>
+                    </li>
+                    <li>
+                        <a href="systemlog.php" class="waves-effect"><i class="fa fa-file-o fa-fw" aria-hidden="true"></i>System Log</a>
                     </li>
 
                 </ul>

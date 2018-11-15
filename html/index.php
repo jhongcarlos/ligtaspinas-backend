@@ -25,7 +25,7 @@ $cresult = mysqli_fetch_array($cquery);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/logo.png">
     <title>Ligtas Pinas</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -177,7 +177,7 @@ $cresult = mysqli_fetch_array($cquery);
                 
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2018 &copy; Ligtas Pinas </footer>
+            <?php include('footer.php') ?>
         </div>
         <!-- ============================================================== -->
         <!-- End Page Content -->

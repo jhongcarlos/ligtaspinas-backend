@@ -1,3 +1,7 @@
+<?php 
+ob_start();
+include('server.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/logo.png">
     <title>Ligtas Pinas</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,17 +40,20 @@
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
         </svg>
     </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
     <div id="wrapper">
-        <?php include 'nav.php'; ?>
+       <?php include('nav.php'); ?>
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Report</h4> </div>
+                        <h4 class="page-title">Manage Advertisements</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li><a href="#">Ligtas Pinas</a></li>
-                            <li class="active">Downloadable reports</li>
+                            <li class="active">Advertisement</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -54,20 +61,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                          <h3 class="box-title">Downloadable reports</h3>
-
-                          <form action="pdf.php" method="post" target="blank">
-                              <button name="pdf" class="btn btn-info">Flood reports</button><br><br>
-                          </form>
-                          <form action="pdf-report.php" method="post" target="blank">
-                              <button name="pdf" class="btn btn-info">Incident reports</button>
-                          </form>
-                      </div>
+                            <h3 class="box-title">Blank Page</h3> </div>
                     </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <?php include('footer.php') ?>
+            <?php include 'footer.php'; ?>
         </div>
         <!-- ============================================================== -->
         <!-- End Page Content -->
