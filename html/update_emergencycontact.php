@@ -1,4 +1,7 @@
-<?php include('server.php'); ?>
+<?php 
+ob_start();
+include('server.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,11 +43,11 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Evacuation Center</h4> </div>
+                        <h4 class="page-title">Update Emergency Contacts</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li><a href="#">Ligtas Pinas</a></li>
-                            <li class="active">Evacuation Center</li>
+                            <li class="active">Update Emergency Contacts</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -52,57 +55,31 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <?= $result_evacuation; ?>
-                            <h3 class="box-title">Add Evacuation Center</h3>
-                            <div id="googleMap" style="width:100%;height:380px;"></div>
-                              <script>
-                                var lat = 0;
-                                var lng = 0;
+                            <h3 class="box-title">Specify which Contact you want to update</h3> <br>
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <code>Select Contact</code>
+                                    <select name="update_contact" class="form-control">
+                                        <?php 
+                                            $sql = mysqli_query($db, "SELECT * FROM tblemergencycontact ORDER BY id DESC");
+                                            while ($res = mysqli_fetch_array($sql)) {
+                                                echo "<option>".$res['contactname']."</option>";
+                                            }
+                                         ?>
+                                    </select>
+                                </div><br>
+                                    <div class="form-group">
+                                        <code>Updated Number</code>
+                                        <input type="number" name="update_number" class="form-control" placeholder="Enter Number"><br>
 
-                                function myMap() {
-                                var mapProp= {
-                                    center:new google.maps.LatLng(14.653687,120.968495),
-                                    zoom:14,
-                                };
-                                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-                                google.maps.event.addListener(map, 'click', function(event) {
-                                    lat = event.latLng.lat();
-                                    lng = event.latLng.lng();
-                                  window.location.href = "evacuation_add.php?lat=" + lat + "&lng=" + lng;
-                                });
-                                }
-                                myMap();
-                                </script>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbS4HN65gf6HMB18FweVuDTvDli1fWhfo&callback=myMap"></script>
-                        <?php
-                          if (isset($_GET["lat"]) && isset($_GET["lng"])) {
-                            $hello = $_GET["lat"] . " " . $_GET["lng"];
-
-                            $_SESSION['lat'] = $_GET["lat"];
-                            $_SESSION['lng'] = $_GET["lng"];
-
-                            echo "<script>alert('Evacuation Center Located!')</script>";
-                        }
-                        ?><br>
-                        <form action="" method="post">
-                            <div class="form-group">
-                                <code>Location name</code>
-                                <input type="text" name="location" class="form-control" placeholder="Enter location name">
-                            </div>
-                            <div class="form-group">
-                                <code>Description</code>
-                                <input type="text" name="description" class="form-control" placeholder="Enter Description">
-                            </div>
-                            <button name="addevacuation" class="btn btn-default btn-block">Add Evacuation Center</button>
-                        </form>
-                        </div>
-
+                                <button name="update_evac_second" class="btn btn-warning" style="float: right">Update</button>
+                                    </div>
+                            </form>
                     </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2018 &copy; Ligtas Pinas </footer>
+            <footer class="footer text-center"> 2018 &copy; Ligtas Pinas</footer>
         </div>
         <!-- ============================================================== -->
         <!-- End Page Content -->

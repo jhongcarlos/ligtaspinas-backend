@@ -26,10 +26,10 @@
                         <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="evacuation_center.php" class="waves-effect"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>Evacuation Center</a>
+                        <a href="evacuation_center.php" class="waves-effect"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>Evacuation center</a>
                     </li>
                     <li>
-                        <a href="basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Basic Tables</a>
+                        <a href="emergency_contact.php" class="waves-effect"><i class="fa fa-phone fa-fw" aria-hidden="true"></i>Emergency Contact</a>
                     </li>
                     <li>
                         <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>Icons</a>
@@ -38,7 +38,7 @@
                         <a href="city_registration.php" class="waves-effect"><i class="fa fa-building fa-fw" aria-hidden="true"></i>City Registration</a>
                     </li>
                     <li>
-                        <a href="blank.html" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Blank Page</a>
+                        <a href="reports.php" class="waves-effect"><i class="fa fa-book fa-fw" aria-hidden="true"></i>Reports</a>
                     </li>
                     <li>
                         <a href="manage_users.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i>Manage Users</a>

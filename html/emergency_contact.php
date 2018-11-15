@@ -1,4 +1,6 @@
-<?php include('server.php'); ?>
+<?php 
+    include('server.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +22,12 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body class="fix-header">
@@ -35,16 +43,17 @@
     <!-- Wrapper -->
     <!-- ============================================================== -->
     <div id="wrapper">
-        <?php include('nav.php'); ?>
+        <?php include 'nav.php'; ?>
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Evacuation Center</h4> </div>
+                        <h4 class="page-title">Emergency Contacts</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <a href="update_emergencycontact.php" target="_blank" class="btn btn-warning pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Update Emergency Contacts</a>
                         <ol class="breadcrumb">
-                            <li><a href="#">Ligtas Pinas</a></li>
-                            <li class="active">Evacuation Center</li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active">Emergency Contacts</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -52,57 +61,39 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <?= $result_evacuation; ?>
-                            <h3 class="box-title">Add Evacuation Center</h3>
-                            <div id="googleMap" style="width:100%;height:380px;"></div>
-                              <script>
-                                var lat = 0;
-                                var lng = 0;
-
-                                function myMap() {
-                                var mapProp= {
-                                    center:new google.maps.LatLng(14.653687,120.968495),
-                                    zoom:14,
-                                };
-                                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-                                google.maps.event.addListener(map, 'click', function(event) {
-                                    lat = event.latLng.lat();
-                                    lng = event.latLng.lng();
-                                  window.location.href = "evacuation_add.php?lat=" + lat + "&lng=" + lng;
-                                });
-                                }
-                                myMap();
-                                </script>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbS4HN65gf6HMB18FweVuDTvDli1fWhfo&callback=myMap"></script>
-                        <?php
-                          if (isset($_GET["lat"]) && isset($_GET["lng"])) {
-                            $hello = $_GET["lat"] . " " . $_GET["lng"];
-
-                            $_SESSION['lat'] = $_GET["lat"];
-                            $_SESSION['lng'] = $_GET["lng"];
-
-                            echo "<script>alert('Evacuation Center Located!')</script>";
-                        }
-                        ?><br>
-                        <form action="" method="post">
-                            <div class="form-group">
-                                <code>Location name</code>
-                                <input type="text" name="location" class="form-control" placeholder="Enter location name">
-                            </div>
-                            <div class="form-group">
-                                <code>Description</code>
-                                <input type="text" name="description" class="form-control" placeholder="Enter Description">
-                            </div>
-                            <button name="addevacuation" class="btn btn-default btn-block">Add Evacuation Center</button>
-                        </form>
+                            <?= $res_delete_evacuation; ?>
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Contact Number</th>
+                                    <th>Category</th>
+                                    <th>Action</th>
+                                </tr>
+                                <?php 
+                                    $sql = mysqli_query($db, "SELECT * FROM tblemergencycontact ORDER BY id DESC");
+                                    while ($res = mysqli_fetch_array($sql)) {
+                                        ?>
+                                        <tr>
+                                            <td><?= $res['id'] ?></td>
+                                            <td><?= $res['contactname'] ?></td>
+                                            <td><?= $res['contactno'] ?></td>
+                                            <td><?= $res['category'] ?></td>
+                                            <td><form action="" method="post">
+                                                <input type="hidden" name="id" value="<?= $res['id'] ?>">
+                                                <button name="delete_evacuation" class="btn btn-danger fa fa-trash"></button>
+                                            </form></td>
+                                        </tr>
+                                        <?php
+                                    }
+                                 ?>
+                            </table> 
                         </div>
-
                     </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2018 &copy; Ligtas Pinas </footer>
+            <footer class="footer text-center"> 2018 &copy; Ligtas Pinas</footer>
         </div>
         <!-- ============================================================== -->
         <!-- End Page Content -->
