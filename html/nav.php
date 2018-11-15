@@ -32,7 +32,7 @@
                         <a href="emergency_contact.php" class="waves-effect"><i class="fa fa-phone fa-fw" aria-hidden="true"></i>Emergency Contact</a>
                     </li>
                     <li>
-                        <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>Icons</a>
+                        <a href="incident_report.php" class="waves-effect"><i class="fa fa-file fa-fw" aria-hidden="true"></i>Incident Reports</a>
                     </li>
                     <li>
                         <a href="city_registration.php" class="waves-effect"><i class="fa fa-building fa-fw" aria-hidden="true"></i>City Registration</a>
@@ -42,6 +42,12 @@
                     </li>
                     <li>
                         <a href="manage_users.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i>Manage Users</a>
+                    </li>
+                    <li>
+                        <a href="announcement.php" class="waves-effect"><i class="fa fa-bullhorn fa-fw" aria-hidden="true"></i>Announcement</a>
+                    </li>
+                    <li>
+                        <a href="account_settings.php" class="waves-effect"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i>Account Settings</a>
                     </li>
 
                 </ul>

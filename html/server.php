@@ -5,6 +5,7 @@ $result_register = "";
 $result_city = "";
 $result_evacuation = "";
 $res_delete_evacuation = "";
+$result_announcement = "";
 
 // Adding users
 if (isset($_POST['adduser'])) {
@@ -55,5 +56,16 @@ if (isset($_POST['update_evac_second'])) {
 	$update_number = $_POST['update_number'];
 
 	header('Location: emergency_contact.php');
+}
+
+// Annoouncement
+if (isset($_POST['announce'])) {
+	$txt_announce = $_POST['txt_announce'];
+
+	$time = date('h:i:s');
+	$date = date('Y-m-d');
+
+	$sql = mysqli_query($db, "INSERT INTO `tblalertmsg` (`id`, `brgyid`, `message`, `time`, `date`, `AMPM`) VALUES (NULL, '0', '$txt_announce', '$time', '$date', 'AM');");
+	$result_announcement = "<h3 style='padding: 10px; background-color: #99ff99;margin-bottom:10px' class='btn btn-dark btn-block'>Announced successfully</h3>";
 }
  ?>

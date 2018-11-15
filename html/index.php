@@ -1,6 +1,20 @@
 <?php 
 ob_start();
 include('server.php');
+
+$day = date('d');
+$a = "SELECT water_lvl FROM tblmain WHERE station = 'ST1'";
+$aquery = mysqli_query($db,$a);
+$aresult = mysqli_fetch_array($aquery);
+
+$b = "SELECT water_lvl FROM tblmain WHERE station = 'ST2'";
+$bquery = mysqli_query($db,$b);
+$bresult = mysqli_fetch_array($bquery);
+
+$c = "SELECT water_lvl FROM tblmain WHERE day = '$day' AND station = 'ST3' LIMIT 1";
+$cquery = mysqli_query($db,$c);
+$cresult = mysqli_fetch_array($cquery);
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,77 +138,33 @@ include('server.php');
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
-                            <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
-                                <select class="form-control pull-right row b-none">
-                                    <option>March 2017</option>
-                                    <option>April 2017</option>
-                                    <option>May 2017</option>
-                                    <option>June 2017</option>
-                                    <option>July 2017</option>
-                                </select>
-                            </div>
-                            <h3 class="box-title">Recent sales</h3>
+                            <h3 class="box-title">Flood Level List</h3>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>NAME</th>
-                                            <th>STATUS</th>
-                                            <th>DATE</th>
-                                            <th>PRICE</th>
+                                            <th>Station</th>
+                                            <th>Name</th>
+                                            <th>Water Level</th>
+                                            <th>Time</th>
+                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="txt-oflo">Elite admin</td>
-                                            <td>SALE</td>
-                                            <td class="txt-oflo">April 18, 2017</td>
-                                            <td><span class="text-success">$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td class="txt-oflo">Real Homes WP Theme</td>
-                                            <td>EXTENDED</td>
-                                            <td class="txt-oflo">April 19, 2017</td>
-                                            <td><span class="text-info">$1250</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td class="txt-oflo">Ample Admin</td>
-                                            <td>EXTENDED</td>
-                                            <td class="txt-oflo">April 19, 2017</td>
-                                            <td><span class="text-info">$1250</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td class="txt-oflo">Medical Pro WP Theme</td>
-                                            <td>TAX</td>
-                                            <td class="txt-oflo">April 20, 2017</td>
-                                            <td><span class="text-danger">-$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td class="txt-oflo">Hosting press html</td>
-                                            <td>SALE</td>
-                                            <td class="txt-oflo">April 21, 2017</td>
-                                            <td><span class="text-success">$24</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td class="txt-oflo">Digital Agency PSD</td>
-                                            <td>SALE</td>
-                                            <td class="txt-oflo">April 23, 2017</td>
-                                            <td><span class="text-danger">-$14</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td class="txt-oflo">Helping Hands WP Theme</td>
-                                            <td>MEMBER</td>
-                                            <td class="txt-oflo">April 22, 2017</td>
-                                            <td><span class="text-success">$64</span></td>
-                                        </tr>
+                                        <?php 
+                                            $sql = mysqli_query($db, "SELECT * FROM tblmain ORDER BY `time` DESC");
+                                            while ($res = mysqli_fetch_array($sql)) {
+                                                ?>
+                                                <tr>
+                                                    <td><?= $res['station'] ?></td>
+                                                    <td><?= $res['name'] ?></td>
+                                                    <td><?= $res['water_lvl'] ?></td>
+                                                    <td><?= $res['time'] . " " . $res['AMPM']; ?></td>
+                                                    <td><?= $res['month']." - ". $res['day'] . " - ". $res['year']; ?></td>
+                                                </tr>
+                                                <?php
+                                            }
+                                         ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -258,7 +228,7 @@ include('server.php');
      new Chartist.Line('#ct-visits', {
          labels: ['R.PAPA', 'Macabebe', 'Calapan'],
          series: [
-    [5, 2, 7]
+    [<?= $aresult[0]; ?>, <?= $bresult[0]; ?>, <?= $cresult[0]; ?>]
   ]
      }, {
          top: 0,
