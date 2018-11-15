@@ -16,8 +16,9 @@ if (isset($_POST['adduser'])) {
 	$region = $_POST['region'];
 	$city = $_POST['city'];
 	$position = $_POST['position'];
+	$password = $_POST['password'];
 
-	$sql = mysqli_query($db, "INSERT INTO `tblbackend_users` (`id`, `name`, `email`, `contact_number`, `region`, `city`, `position`) VALUES (NULL, '$name', '$email', '$contact_number', '$region', '$city', 'position');");
+	$sql = mysqli_query($db, "INSERT INTO `tblbackend_users` (`id`, `name`, `email`, `contact_number`, `region`, `city`, `position`) VALUES (NULL, '$name', '$email', '$contact_number', '$region', '$city', 'position','$password');");
 	$result_register = "<h3 style='padding: 10px; background-color: #99ff99' class='btn btn-dark btn-block'>User Added</h3>";
 }
 
@@ -83,4 +84,17 @@ if (isset($_POST['add_advertisement'])) {
     $sql = mysqli_query($db, "INSERT INTO `tbladvertisement` (`id`, `company`, `price`, `image`, `link`) VALUES (NULL, '$company', '$price', '$data', '$link');");
     $result_ads = "<h3 style='padding: 10px; background-color: #99ff99;margin-bottom:10px' class='btn btn-dark btn-block'>Advertiser Added</h3";
 }
+// Login
+if (isset($_POST['login'])) {
+
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $password = mysqli_real_escape_string($db, $_POST['password']);
+
+    $query = "SELECT * FROM tblbackend_users WHERE email='$email' AND password='$password'";
+    $results = mysqli_query($db, $query);
+    if (mysqli_num_rows($results) == 1) {
+       $_SESSION['lp_email'] = $email;
+       header('location: index.php');
+    }
+  }
  ?>

@@ -1,6 +1,9 @@
 <?php 
 ob_start();
 include('server.php');
+if (!isset($_SESSION['lp_email'])) {
+    header('location: login.php');
+}
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,6 +111,10 @@ include('server.php');
                                             <option>Barangay Captain</option>
                                         </select><br>
                                     <button class="btn btn-warning" style="float: right;" name="adduser">Add user</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <code>*Password</code>
+                                        <input type="text" name="password" class="form-control" required placeholder="Enter Password">
                                     </div>
                                 </form>
                             <!-- </div> -->

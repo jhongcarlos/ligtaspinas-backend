@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-static-top m-b-0">
-            <div class="navbar-header">
+            <div class="navbar-header" style="background-color: #041f30">
                 <img src="../plugins/images/logo2.png" height="75" width="300" class="light-logo" style="padding: 3px">
                 <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
@@ -56,7 +56,17 @@
                     <li>
                         <a href="systemlog.php" class="waves-effect"><i class="fa fa-file-o fa-fw" aria-hidden="true"></i>System Log</a>
                     </li>
-
+                    <li>
+                        <form action="" method="post" style="padding: 10px;margin-bottom: 20px">
+                            <button name="logout" class="btn btn-block btn-warning">Log out</button>
+                        </form>
+                        <?php 
+                            if (isset($_POST['logout'])) {
+                                header('Location: login.php');
+                                session_destroy();
+                            }
+                         ?>
+                    </li>
                 </ul>
             </div>
             

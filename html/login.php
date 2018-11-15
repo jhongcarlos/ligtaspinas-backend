@@ -1,3 +1,4 @@
+<?php include('server.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,20 +19,20 @@
 
     <div class="grid">
       <img src="../plugins/images/bg.png" height="200" width="200" style="display: block;margin-right: auto;margin-left: auto;">
-      <form method="POST" class="form login" style="margin-top: 1%;">
+      <form method="post" class="form login" style="margin-top: 1%;">
 
         <div class="form__field">
-          <label for="login_username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
-          <input id="login_username" type="text" name="email" class="form__input" placeholder="Email" required>
+          <label for="login_username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Email</span></label>
+          <input id="login_username" type="text" name="email" class="form__input" placeholder="Email" required style="color: #000">
         </div>
 
         <div class="form__field">
           <label for="login_password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
-          <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+          <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required style="color: #000">
         </div>
 
         <div class="form__field">
-          <input type="submit" value="Sign In">
+          <input type="submit" name="login" value="Sign In">
         </div>
 
       </form>

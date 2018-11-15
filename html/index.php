@@ -2,6 +2,10 @@
 ob_start();
 include('server.php');
 
+if (!isset($_SESSION['lp_email'])) {
+    header('location: login.php');
+}
+
 $day = date('d');
 $a = "SELECT water_lvl FROM tblmain WHERE station = 'ST1'";
 $aquery = mysqli_query($db,$a);

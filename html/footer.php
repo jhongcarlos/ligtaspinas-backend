@@ -8,22 +8,22 @@
                 </div>
                 <div class="row" style="margin-top: 34px">
                 	<div class="col-md-2">
-                		<img src="../plugins/images/sti.png" height="40" width="120">
+                		<img src="../plugins/images/sti.png" height="60" width="120">
                 	</div>
                 	<div class="col-md-2">
-                		<img src="../plugins/images/pnp.png" height="40" width="50">
+                		<img src="../plugins/images/pnp.png" height="60" width="50">
                 	</div>
                 	<div class="col-md-2">
-                		<img src="../plugins/images/lgu.png" height="40" width="50">
+                		<img src="../plugins/images/lgu.png" height="70" width="60">
                 	</div>
                 	<div class="col-md-2">
-                		<img src="../plugins/images/ndrrmc.png" height="40" width="100">
+                		<img src="../plugins/images/ndrrmc.png" height="50" width="110">
                 	</div>
                 	<div class="col-md-2">
-                		<img src="../plugins/images/redcross.png" height="40" width="50">
+                		<img src="../plugins/images/redcross.png" height="55" width="60">
                 	</div>
                 	<div class="col-md-2">
-                		<img src="../plugins/images/bfp.png" height="40" width="50">
+                		<img src="../plugins/images/bfp.png" height="55" width="55">
                 	</div>
                 </div>
             </footer>

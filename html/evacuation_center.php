@@ -1,4 +1,10 @@
-<?php include('server.php'); ?>
+<?php 
+ob_start();
+include('server.php'); 
+if (!isset($_SESSION['lp_email'])) {
+    header('location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
