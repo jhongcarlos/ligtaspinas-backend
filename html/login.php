@@ -17,12 +17,12 @@
   <body class="align" style="background-image: url('../plugins/images/bg.jpg')">
 
     <div class="grid">
-      <img src="../plugins/images/bg.png" height="250" width="250" style="display: block;margin-right: auto;margin-left: auto;">
-      <form method="POST" class="form login" style="margin-top: 5%;">
+      <img src="../plugins/images/bg.png" height="200" width="200" style="display: block;margin-right: auto;margin-left: auto;">
+      <form method="POST" class="form login" style="margin-top: 1%;">
 
         <div class="form__field">
           <label for="login_username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
-          <input id="login_username" type="text" name="email" class="form__input" placeholder="Username" required>
+          <input id="login_username" type="text" name="email" class="form__input" placeholder="Email" required>
         </div>
 
         <div class="form__field">
@@ -35,7 +35,6 @@
         </div>
 
       </form>
-
 
     </div>
 

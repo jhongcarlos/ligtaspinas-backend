@@ -10,7 +10,7 @@ include('server.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/logo.png">
     <title>Ligtas Pinas</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@ include('server.php');
          ?>
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
+                <div class="row bg-title" style="margin-top: 10px">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">City Registration</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -77,7 +77,7 @@ include('server.php');
                                         </select>
                                     </div>
                                     
-                                    <button class="btn btn-dark btn-block" name="register_city">Register City</button>
+                                    <button class="btn btn-warning btn-block" name="register_city">Register City</button>
                                 </form>
                             <!-- </div> -->
                         </div>

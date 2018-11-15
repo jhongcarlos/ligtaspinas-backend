@@ -42,7 +42,7 @@ include('server.php');
          ?>
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
+                <div class="row bg-title" style="margin-top: 10px">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Manage Users</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -106,9 +106,9 @@ include('server.php');
                                             <option>Staff</option>
                                             <option>LGU</option>
                                             <option>Barangay Captain</option>
-                                        </select>
+                                        </select><br>
+                                    <button class="btn btn-warning" style="float: right;" name="adduser">Add user</button>
                                     </div>
-                                    <button class="btn btn-dark btn-block" name="adduser">Add user</button>
                                 </form>
                             <!-- </div> -->
                         </div>

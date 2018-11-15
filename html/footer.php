@@ -1,3 +1,4 @@
+<div style="margin-top: 100px">
 <footer class="footer text-center"> 2018 &copy; Ligtas Pinas
                 <div align="center"><b>Powered by:</b></div>
                 <div class="row">
@@ -26,3 +27,4 @@
                 	</div>
                 </div>
             </footer>
+            </div>

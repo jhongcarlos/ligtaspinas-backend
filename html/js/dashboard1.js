@@ -3,7 +3,7 @@
      // toat popup js
      $.toast({
          heading: 'Welcome to LIGTAS PINAS',
-         text: '',
+         text: 'Greetings to UnionBank!',
          position: 'top-right',
          loaderBg: '#fff',
          icon: 'warning',

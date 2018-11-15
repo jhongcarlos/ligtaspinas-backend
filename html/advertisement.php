@@ -61,7 +61,28 @@ include('server.php');
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title">Blank Page</h3> </div>
+                            <?= $result_ads; ?>
+                            <h3 class="box-title">Enter Company information</h3>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <code>Company Name</code>
+                                    <input type="text" name="company" class="form-control" required="">
+                                </div>
+                                <div class="form-group">
+                                    <code>Price</code>
+                                    <input type="number" name="price" class="form-control" required="">
+                                </div>
+                                <div class="form-group">
+                                    <code>Link</code>
+                                    <input type="text" name="link" class="form-control" required="">
+                                </div>
+                                <div class="form-group">
+                                    <code>Company Image</code>
+                                    <input type="file" name="file" class="form-control" required=""><br>
+                                    <button class="btn btn-warning" name="add_advertisement" style="float: right;">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

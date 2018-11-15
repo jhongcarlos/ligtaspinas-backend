@@ -4,7 +4,7 @@
                 <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <img src="../plugins/images/u_icon.png" height="80" width="80">
+                        <a href="https://www.unionbankph.com/" target="blank"><img src="../plugins/images/u_icon.png" height="80" width="80"></a>
                     </li>
                 </ul>
             </div>

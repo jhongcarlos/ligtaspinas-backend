@@ -47,7 +47,7 @@ include('server.php');
        <?php include('nav.php'); ?>
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
+                <div class="row bg-title" style="margin-top: 10px">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Account Settings</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -71,17 +71,17 @@ include('server.php');
                                             <tr>
                                                 <td width="33%">Full Name</td>
                                                 <td width="33%"><?= $res['name'] ?></td>
-                                                <td width="33%"><a class="btn btn-primary text-white" data-toggle="modal" data-target="#edit_name">Edit</a></td>
+                                                <td width="33%"><a class="btn btn-warning text-white" data-toggle="modal" data-target="#edit_name">Edit</a></td>
                                             </tr>
                                             <tr>
                                                 <td width="33%">Email</td>
                                                 <td width="33%"><?= $res['email'] ?></td>
-                                                <td width="33%"><a class="btn btn-primary text-white" data-toggle="modal" data-target="#edit_email">Edit</a></td>
+                                                <td width="33%"><a class="btn btn-warning text-white" data-toggle="modal" data-target="#edit_email">Edit</a></td>
                                             </tr>
                                             <tr>
                                                 <td width="33%">Contact Number</td>
                                                 <td width="33%"><?= $res['contact_number'] ?></td>
-                                                <td width="33%"><a class="btn btn-primary text-white" data-toggle="modal" data-target="#edit_number">Edit</a></td>
+                                                <td width="33%"><a class="btn btn-warning text-white" data-toggle="modal" data-target="#edit_number">Edit</a></td>
                                             </tr>
                                             <?php
                                         }

@@ -47,7 +47,7 @@ include('server.php');
         <?php include('nav.php'); ?>
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
+                <div class="row bg-title" style="margin-top: 10px">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Announcement</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -66,7 +66,7 @@ include('server.php');
                             <form method="post">
                                 <div class="form-group">
                                     <textarea name="txt_announce" class="form-control" rows="5"></textarea><br>
-                                    <button class="btn btn-info" name="announce" style="float: right;">Announce</button>
+                                    <button class="btn btn-warning" name="announce" style="float: right;">Announce</button>
                                 </div>
                             </form>
                         </div>

@@ -38,7 +38,7 @@
         <?php include('nav.php'); ?>
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
+                <div class="row bg-title" style="margin-top: 10px">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Evacuation Center</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -92,9 +92,9 @@
                             </div>
                             <div class="form-group">
                                 <code>Description</code>
-                                <input type="text" name="description" class="form-control" placeholder="Enter Description">
+                                <input type="text" name="description" class="form-control" placeholder="Enter Description"><br>
+                                <button name="addevacuation" class="btn btn-warning" style="float: right;">Add Evacuation Center</button>
                             </div>
-                            <button name="addevacuation" class="btn btn-default btn-block">Add Evacuation Center</button>
                         </form>
                         </div>
 

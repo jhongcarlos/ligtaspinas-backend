@@ -6,6 +6,7 @@ $result_city = "";
 $result_evacuation = "";
 $res_delete_evacuation = "";
 $result_announcement = "";
+$result_ads = "";
 
 // Adding users
 if (isset($_POST['adduser'])) {
@@ -67,5 +68,19 @@ if (isset($_POST['announce'])) {
 
 	$sql = mysqli_query($db, "INSERT INTO `tblalertmsg` (`id`, `brgyid`, `message`, `time`, `date`, `AMPM`) VALUES (NULL, '0', '$txt_announce', '$time', '$date', 'AM');");
 	$result_announcement = "<h3 style='padding: 10px; background-color: #99ff99;margin-bottom:10px' class='btn btn-dark btn-block'>Announced successfully</h3>";
+}
+
+// Add Advertisement
+if (isset($_POST['add_advertisement'])) {
+	$company = $_POST['company'];
+	$price = $_POST['price'];
+	$link = $_POST['link'];
+
+	$image = $_FILES['file']['tmp_name'];
+    $get = file_get_contents($image);
+    $data = base64_encode($get);
+
+    $sql = mysqli_query($db, "INSERT INTO `tbladvertisement` (`id`, `company`, `price`, `image`, `link`) VALUES (NULL, '$company', '$price', '$data', '$link');");
+    $result_ads = "<h3 style='padding: 10px; background-color: #99ff99;margin-bottom:10px' class='btn btn-dark btn-block'>Advertiser Added</h3";
 }
  ?>

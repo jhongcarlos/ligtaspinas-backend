@@ -40,7 +40,7 @@
         <?php include 'nav.php'; ?>
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
+                <div class="row bg-title" style="margin-top: 10px">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Report</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -57,10 +57,10 @@
                           <h3 class="box-title">Downloadable reports</h3>
 
                           <form action="pdf.php" method="post" target="blank">
-                              <button name="pdf" class="btn btn-info">Flood reports</button><br><br>
+                              <button name="pdf" class="btn btn-warning">Flood reports</button><br><br>
                           </form>
                           <form action="pdf-report.php" method="post" target="blank">
-                              <button name="pdf" class="btn btn-info">Incident reports</button>
+                              <button name="pdf" class="btn btn-warning">Incident reports</button>
                           </form>
                       </div>
                     </div>
