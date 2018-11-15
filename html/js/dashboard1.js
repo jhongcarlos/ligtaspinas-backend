@@ -2,8 +2,8 @@
      "use strict";
      // toat popup js
      $.toast({
-         heading: 'Welcome to Ample admin',
-         text: 'Use the predefined ones, or specify a custom position object.',
+         heading: 'Welcome to LIGTAS PINAS',
+         text: '',
          position: 'top-right',
          loaderBg: '#fff',
          icon: 'warning',
@@ -14,7 +14,7 @@
 
      //ct-visits
      new Chartist.Line('#ct-visits', {
-         labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+         labels: ['2000', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
          series: [
     [5, 2, 7, 4, 5, 3, 5, 4]
     , [2, 5, 2, 6, 2, 5, 2, 4]

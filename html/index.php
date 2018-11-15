@@ -1,3 +1,7 @@
+<?php 
+ob_start();
+include('server.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,37 +65,44 @@
                 <!-- Different data widgets -->
                 <!-- ============================================================== -->
                 <!-- .row -->
+                <?php 
+                    $sql = mysqli_query($db, "SELECT * FROM tblcity WHERE cityname = 'Manila'");
+                    if ($res = mysqli_fetch_array($sql)) {
+                        echo $res['api'];
+                    }
+                 ?><br>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Visit</h3>
+                            <h3 class="box-title">Total App users</h3>
                             <ul class="list-inline two-part">
                                 <li>
                                     <div id="sparklinedash"></div>
                                 </li>
-                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">659</span></li>
+                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">
+                                    <?php 
+                                        $sql = mysqli_query($db, "SELECT * FROM tblappusers");
+                                        $num = mysqli_num_rows($sql);
+                                        echo $num;
+                                     ?>
+                                </span></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Total Page Views</h3>
-                            <ul class="list-inline two-part">
-                                <li>
-                                    <div id="sparklinedash2"></div>
-                                </li>
-                                <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">869</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info">
-                            <h3 class="box-title">Unique Visitor</h3>
+                            <h3 class="box-title">Total incident reported</h3>
                             <ul class="list-inline two-part">
                                 <li>
                                     <div id="sparklinedash3"></div>
                                 </li>
-                                <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">911</span></li>
+                                <li class="text-right"><i class="ti-arrow-up text-danger"></i> <span class="counter text-danger">
+                                    <?php 
+                                        $sql = mysqli_query($db, "SELECT * FROM tblreports");
+                                        $num = mysqli_num_rows($sql);
+                                        echo $num;
+                                     ?>
+                                </span></li>
                             </ul>
                         </div>
                     </div>
@@ -102,13 +113,7 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="white-box">
-                            <h3 class="box-title">Products Yearly Sales</h3>
-                            <ul class="list-inline text-right">
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Mac</h5> </li>
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-inverse"></i>Windows</h5> </li>
-                            </ul>
+                            <h3 class="box-title">Flood Level Forecast</h3>
                             <div id="ct-visits" style="height: 405px;"></div>
                         </div>
                     </div>
@@ -233,7 +238,92 @@
     <script src="../plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
-    <script src="js/dashboard1.js"></script>
+    <!-- <script src="js/dashboard1.js"></script> -->
+    <script type="text/javascript">
+         $(document).ready(function () {
+     "use strict";
+     // toat popup js
+     $.toast({
+         heading: 'Welcome to LIGTAS PINAS',
+         text: '',
+         position: 'top-right',
+         loaderBg: '#fff',
+         icon: 'info',
+         hideAfter: 3500,
+         stack: 6
+     })
+
+
+     //ct-visits
+     new Chartist.Line('#ct-visits', {
+         labels: ['R.PAPA', 'Macabebe', 'Calapan'],
+         series: [
+    [5, 2, 7]
+  ]
+     }, {
+         top: 0,
+         low: 1,
+         showPoint: true,
+         fullWidth: true,
+         plugins: [
+    Chartist.plugins.tooltip()
+  ],
+         axisY: {
+             labelInterpolationFnc: function (value) {
+                 return (value / 1) + 'k';
+             }
+         },
+         showArea: true
+     });
+     // counter
+     $(".counter").counterUp({
+         delay: 100,
+         time: 1200
+     });
+
+     var sparklineLogin = function () {
+         $('#sparklinedash').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
+             type: 'bar',
+             height: '30',
+             barWidth: '4',
+             resize: true,
+             barSpacing: '5',
+             barColor: '#7ace4c'
+         });
+         $('#sparklinedash2').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
+             type: 'bar',
+             height: '30',
+             barWidth: '4',
+             resize: true,
+             barSpacing: '5',
+             barColor: '#7460ee'
+         });
+         $('#sparklinedash3').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
+             type: 'bar',
+             height: '30',
+             barWidth: '4',
+             resize: true,
+             barSpacing: '5',
+             barColor: '#11a0f8'
+         });
+         $('#sparklinedash4').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
+             type: 'bar',
+             height: '30',
+             barWidth: '4',
+             resize: true,
+             barSpacing: '5',
+             barColor: '#f33155'
+         });
+     }
+     var sparkResize;
+     $(window).on("resize", function (e) {
+         clearTimeout(sparkResize);
+         sparkResize = setTimeout(sparklineLogin, 500);
+     });
+     sparklineLogin();
+ });
+
+    </script>
     <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
 </body>
 

@@ -56,9 +56,11 @@
                         <div class="white-box">
                           <h3 class="box-title">Downloadable reports</h3>
 
-                          <form action="" method="post">
-                              <button name="floodreport" class="btn btn-info">Flood reports</button><br><br>
-                              <button name="incidentreport" class="btn btn-info">Incident reports</button>
+                          <form action="pdf.php" method="post" target="blank">
+                              <button name="pdf" class="btn btn-info">Flood reports</button><br><br>
+                          </form>
+                          <form action="pdf-report.php" method="post" target="blank">
+                              <button name="pdf" class="btn btn-info">Incident reports</button>
                           </form>
                       </div>
                     </div>
