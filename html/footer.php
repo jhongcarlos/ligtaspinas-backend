@@ -5,7 +5,7 @@
                         <img src="../plugins/images/ubank.png" height="40" width="250">
                     </div>
                 </div>
-                <div class="row" style="margin-top: 35px">
+                <div class="row" style="margin-top: 34px">
                 	<div class="col-md-2">
                 		<img src="../plugins/images/sti.png" height="40" width="120">
                 	</div>
