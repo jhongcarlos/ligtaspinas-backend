@@ -15,7 +15,7 @@
 </head>
 <body>
 
-  <body class="align" style="background-image: url('../plugins/images/bg.jpg')">
+  <body class="align" style="background-color: #041f30">
 
     <div class="grid">
       <img src="../plugins/images/bg.png" height="200" width="200" style="display: block;margin-right: auto;margin-left: auto;">
